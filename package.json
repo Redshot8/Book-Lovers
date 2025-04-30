@@ -1,0 +1,15 @@
+{
+  "name": "book-lovers",
+  "version": "1.0.0",
+  "description": "A website to buy books",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Amir",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  }
+}

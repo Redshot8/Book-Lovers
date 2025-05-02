@@ -1,4 +1,5 @@
 //bookView
+import { imageMap } from "../../data/ImgMap.js";
 import numberController from "../controllers/numberController.js";
 import paginationView from "./paginationView.js";
 import * as model from "../model.js";
@@ -59,14 +60,18 @@ class bookView {
     return `
         <div class="books__card">
             <div class="card__front">
-              <img class="card__img" src="${book.image}" alt="${book.title}" />
+              <img class="card__img" src="${imageMap[book.id]}" alt="${
+      book.title
+    }" />
               <div class="card__content">
                 <h3 class="card__content-name">${book.title}</h3>
                 <p class="card__content-author">${book.author}</p>
               </div>
               <div class="line"></div>
               <div class="book__card_bottom">
-                <p class="card__price"><span class="card__price_number" >${book.price}</span> تومان</p>
+                <p class="card__price"><span class="card__price_number" >${
+                  book.price
+                }</span> تومان</p>
                 <button class="card__add-to-cart books__btn">
                   افزودن به سبد خرید
                 </button>

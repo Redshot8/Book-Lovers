@@ -188,7 +188,7 @@ button {
 
 .header__section-top {
   margin: 0 auto;
-  width: 1100px;
+  max-width: 100rem;
   height: 10vh;
   display: flex;
   flex-direction: row-reverse;
@@ -200,6 +200,8 @@ button {
   position: fixed;
   top: 0.8rem;
   left: 50%;
+  width: 50%;
+  height: 6.5rem;
   transform: translateX(-50%);
   z-index: 100;
   justify-content: space-around;
@@ -252,6 +254,7 @@ button {
     url(../img/header-img.jpg);
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   background-blend-mode: overlay;
 }
 .header__title {
@@ -346,7 +349,7 @@ button {
 
 /* MAIN TITLE */
 .books {
-  width: min(110rem, 95%);
+  width: min(110rem, 90%);
   margin: 5rem auto;
 }
 .heading {
@@ -411,7 +414,7 @@ button {
 .card__front,
 .card__back {
   position: absolute;
-  /* width: 100%; */
+  width: 100%;
   height: auto;
   backface-visibility: hidden;
   display: flex;
@@ -494,7 +497,7 @@ button {
 }
 /* ABOUT US */
 .about-us {
-  width: min(110rem, 95%);
+  width: min(110rem, 90%);
   margin: 5rem auto;
 }
 .sub-heading {
@@ -564,14 +567,14 @@ button {
 
 /* COMMENTS */
 .comments {
-  margin: 5rem auto;
-  width: 110rem;
+  margin: 5rem auto 1rem;
+  width: min(110rem, 90%);
 }
 .slider {
   position: relative;
   overflow: hidden;
   width: 80%;
-  height: 29rem;
+  height: 35rem;
   margin: 0 auto;
 }
 .slide {
@@ -678,11 +681,11 @@ button {
   opacity: 1;
 }
 .book__slide-content > h3 {
-  font-size: 3.5rem;
+  font-size: clamp(1.5rem, 2.2vw, 3.5rem);
 }
 .book__slide-content > p {
   margin-top: 2rem;
-  font-size: 2.2rem;
+  font-size: clamp(1.2rem, 1.8vw, 2.2rem);
   text-align: center;
 }
 .book__slider-left {
@@ -714,9 +717,10 @@ button {
 
 .footer__about > p {
   font-size: 1.5rem;
-  width: 45rem;
+  max-width: 45rem;
   color: var(--white-color);
   margin: 3rem 0;
+  word-wrap: break-word;
 }
 .footer__links > h4 {
   font-size: 2.2rem;
@@ -763,7 +767,7 @@ button {
   top: 50%;
   left: 6%;
   transform: translateY(-50%);
-  width: 40rem;
+  width: 35%;
 }
 
 .pagination {

@@ -1,14 +1,22 @@
+// Pagination View
 class PaginationView {
   constructor() {
     this.parentEl = document.querySelector(".books__wrapper");
-    this.booksPerPage = 10;
     this.currentPage = 1;
+    // this.booksPerPage = 5;
+    this.setBooksPerPage();
+    window.addEventListener("resize", this.setBooksPerPage.bind(this));
+  }
+
+  setBooksPerPage() {
+    this.booksPerPage = window.innerWidth <= 680 ? 5 : 10;
   }
 
   render(totalBooks) {
     const totalPages = Math.ceil(totalBooks / this.booksPerPage);
     const markup = this.generateMarkup(totalPages);
     this.parentEl.insertAdjacentHTML("beforeend", markup);
+    console.log(totalPages);
   }
 
   generateMarkup(totalPages) {

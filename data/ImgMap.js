@@ -30,6 +30,7 @@ export const imageMap = {
   8: img8,
   9: img9,
   10: img10,
+  11: img11,
   12: img12,
   13: img13,
   14: img14,

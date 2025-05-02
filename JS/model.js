@@ -17,12 +17,26 @@ export const loadCart = function () {
   }
 };
 export const addItemToCart = function (item) {
-  state.cartItem.push(item);
+  state.cartItem.push({ ...item, quantity: 1 });
   persistCart();
 };
 export const plusItemToCart = function (bookName) {
-  state.cartItem = state.cartItem.filter((item) => item.bookName);
-  persistCart();
+  const item = state.cartItem.find((item) => item.bookName === bookName);
+  if (item) {
+    item.quantity++;
+    persistCart();
+  }
+};
+export const reduceItemInCart = function (bookName) {
+  const item = state.cartItem.find((item) => item.bookName === bookName);
+  if (item) {
+    item.quantity--;
+    if (item.quantity <= 0) {
+      removeItemFromCart(bookName);
+    } else {
+      persistCart();
+    }
+  }
 };
 export const removeItemFromCart = function (bookName) {
   state.cartItem = state.cartItem.filter((item) => item.bookName !== bookName);

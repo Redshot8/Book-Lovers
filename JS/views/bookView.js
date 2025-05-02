@@ -43,9 +43,11 @@ class bookView {
     // Clear previous content
     this.parentEl.innerHTML = "";
 
+    const bookPerPage = paginationView.booksPerPage;
+    const currentPage = paginationView.currentPage;
     // Calculate pagination
-    const start = (this.currentPage - 1) * this.booksPerPage;
-    const end = start + this.booksPerPage;
+    const start = (currentPage - 1) * bookPerPage;
+    const end = start + bookPerPage;
     const paginatedBooks = books.slice(start, end);
 
     // Render books
@@ -54,6 +56,7 @@ class bookView {
 
     // Render pagination
     paginationView.render(books.length);
+    console.log(books.length);
   }
 
   generateMarkup(book) {

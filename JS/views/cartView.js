@@ -72,7 +72,7 @@ class cartView {
     }, 3000);
   }
 
-  renderCartItem({ bookName, cardImg, author, price }) {
+  renderCartItem({ bookName, cardImg, author, price, quantity = 1 }) {
     return `
       <div class="cart-dropdown__item" data-price="${price}">
         <div class="item__img">
@@ -84,11 +84,11 @@ class cartView {
         </div>
         <div class="item__controls">
           <i class="fas fa-plus item__icon item__icon-plus"></i>
-          <span class="item__count">1</span>
+          <span class="item__count">${quantity}</span>
           <i class="fas fa-minus item__icon item__icon-minus"></i>
         </div>
         <div class="item__price"><span class="item__price_number">${numberController.formatToPersian(
-          +price
+          +price * quantity
         )}</span> تومان</div>
         <i class="fas fa-trash item__icon item__icon-trash"></i>
       </div>
@@ -171,17 +171,18 @@ class cartView {
       const itemEl = btn.closest(".cart-dropdown__item");
       if (!itemEl) return;
       const countEl = itemEl.querySelector(".item__count");
-      let itemCount = +countEl.textContent;
       const itemPrice = itemEl.querySelector(".item__price_number");
       const unitPrice = +itemEl.dataset.price;
       const bookName = itemEl.querySelector(".item__content_name").textContent;
 
-      itemCount++;
-      countEl.textContent = itemCount;
-      let newPrice = unitPrice * itemCount;
-      itemPrice.textContent = numberController.formatToPersian(+newPrice);
       model.plusItemToCart(bookName);
-      console.log(model.state.cartItem);
+      const item = model.state.cartItem.find(
+        (item) => item.bookName === bookName
+      );
+      countEl.textContent = item.quantity;
+      itemPrice.textContent = numberController.formatToPersian(
+        unitPrice * item.quantity
+      );
       this.totalPrice();
     });
   }
@@ -193,21 +194,23 @@ class cartView {
       const itemEl = btn.closest(".cart-dropdown__item");
       if (!itemEl) return;
       const countEl = itemEl.querySelector(".item__count");
-      let itemCount = +countEl.textContent;
       const itemPrice = itemEl.querySelector(".item__price_number");
       const unitPrice = +itemEl.dataset.price;
       const bookName = itemEl.querySelector(".item__content_name").textContent;
 
-      itemCount--;
-      countEl.textContent = itemCount;
-      let newPrice = unitPrice * itemCount;
-      itemPrice.textContent = numberController.formatToPersian(+newPrice);
-      this.totalPrice();
-      if (itemCount < 1) {
-        model.removeItemFromCart(bookName);
+      model.reduceItemInCart(bookName);
+      const item = model.state.cartItem.find(
+        (item) => item.bookName === bookName
+      );
+      if (item) {
+        countEl.textContent = item.quantity;
+        itemPrice.textContent = numberController.formatToPersian(
+          unitPrice * item.quantity
+        );
+        this.totalPrice();
+      } else {
         itemEl.remove();
         this.renderCart();
-        return;
       }
     });
   }

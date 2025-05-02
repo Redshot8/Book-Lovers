@@ -1,0 +1,222 @@
+@media screen and (max-width: 1100px) {
+  .header__section-top {
+    max-width: 85rem;
+  }
+}
+@media screen and (max-width: 1045px) {
+  .header__logo {
+    width: 11rem;
+  }
+  .header__nav-item a,
+  .header__nav-cart {
+    font-size: 1.7rem;
+  }
+  .slider {
+    width: 90%;
+  }
+  .slide {
+    padding: 0 8rem;
+  }
+  .slider__btn-right {
+    right: 0;
+  }
+  .slider__btn-left {
+    left: 0;
+  }
+}
+@media screen and (min-width: 850px) and (max-width: 1045px) {
+  .about-us__content {
+    width: 76%;
+  }
+
+  .slider__btn {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+@media screen and (max-width: 850px) {
+  .header__section-top {
+    max-width: 70rem;
+  }
+  .header__title {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 730px) and (max-width: 780px) {
+  .header__section-top.sticky {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 730px) {
+  .header__section-top {
+    max-width: 60rem;
+  }
+  .header__nav-item a,
+  .header__nav-cart {
+    font-size: 1.5rem;
+  }
+  .header__logo {
+    width: 9.5rem;
+  }
+  .header__section-top.sticky {
+    width: 65%;
+  }
+  .header__title {
+    font-size: 2.2rem;
+  }
+  .about-us__content {
+    width: 85%;
+  }
+  .slider {
+    width: 95%;
+  }
+  .slide {
+    padding: 0 5.5rem;
+  }
+  .comments__text {
+    font-size: 1.5rem;
+  }
+  .comments__author__name {
+    font-size: 1.8rem;
+  }
+  .slider__btn {
+    font-size: 2.5rem;
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+  .book__slide-img {
+    width: 30%;
+    height: 75%;
+    left: 5.5rem;
+  }
+  .book__slide-content.active {
+    transform: translate(-9rem, -50%);
+  }
+  .footer {
+    padding: 5rem 4rem;
+  }
+}
+@media screen and (max-width: 610px) {
+  .header__section-top {
+    width: 50rem;
+  }
+  .about-us__content {
+    width: 100%;
+  }
+  .book__slide-img {
+    width: 28%;
+    height: 53%;
+  }
+  .book__slide-content.active {
+    transform: translate(-4rem, -50%);
+  }
+}
+@media screen and (max-width: 550px) {
+  .header__section-top.sticky {
+    width: 75%;
+  }
+  .cart-dropdown {
+    width: 35rem;
+    left: -10.8rem;
+  }
+  .item__content_name {
+    font-size: 1.3rem;
+  }
+
+  .about-us__btn {
+    padding: 1rem 0.5rem;
+  }
+  .slider {
+    height: 31rem;
+  }
+  .slide .sub-heading {
+    font-size: 2rem;
+  }
+  .comments__text {
+    font-size: 1.3rem;
+  }
+  .comments__author__name {
+    font-size: 1.5rem;
+  }
+  .comments__author__img {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+  .footer__logo {
+    width: 45%;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 510px) {
+  .header__section-top {
+    width: 35rem;
+  }
+  .header__title {
+    font-size: 1.5rem;
+  }
+  .header__section-bottom {
+    background-position: unset;
+  }
+  .header__section-top.sticky {
+    width: 90%;
+  }
+  .header__nav-item a,
+  .header__nav-cart {
+    font-size: 1.2rem;
+  }
+  .cart-dropdown {
+    width: 32rem;
+    max-height: 30rem;
+    left: -10.8rem;
+  }
+  .cart-dropdown__item {
+    /* height: 8rem; */
+  }
+  .item__content_name {
+    font-size: 1rem;
+  }
+  .item_content_author {
+    font-size: 0.8rem;
+  }
+  .about-us__btn {
+    font-size: 1rem;
+    padding: 1rem 0.2rem;
+  }
+  .about-us__content .sub-heading {
+    font-size: 2rem;
+  }
+  .about-us__content > p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+  .slide > .sub-heading {
+    font-size: 1.8rem;
+  }
+  .book__slider {
+    height: 50vh;
+  }
+  .slider__btn {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 2rem;
+  }
+  .book__slide-img {
+    left: 4.5rem;
+    width: 25%;
+    height: 35%;
+  }
+  .book__slide-content > h3 {
+    font-size: 1.1rem;
+  }
+  .book__slide-content > p {
+    font-size: 0.9rem;
+  }
+  .footer__about .heading {
+    font-size: 3rem;
+  }
+  .footer__about > p {
+    font-size: 1.2rem;
+  }
+  .footer__link {
+    margin: 0.5rem 0;
+  }
+}
